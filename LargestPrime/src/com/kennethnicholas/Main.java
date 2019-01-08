@@ -17,6 +17,54 @@ package com.kennethnicholas;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        System.out.println(getLargestPrime(21));
+        System.out.println(getLargestPrime(217));
+        System.out.println(getLargestPrime(0));
+        System.out.println(getLargestPrime(45));
+        System.out.println(getLargestPrime(-1));
+
     }
+
+    public static int getLargestPrime(int number) {
+
+        if(number < 2) {    // if number is less than 2 it cannot be prime
+
+            return -1;
+
+        }
+
+        int count = 2;
+
+        while(number > 1) {             // number is eventually divided by count, a factor, which increments and becomes greatest common factor that is prime
+
+            if(number % count == 0) {   // if number can be evenly divided by the count, you might as well do that because the count is a prime factor
+
+                number /= count;        // so do that
+
+            } else {
+
+                count++;                // increment count if it can't go into number evenly to try again.
+
+            }
+
+        }
+
+        return count;
+
+    }
+
 }
+
+/*
+45 > 1
+count = 2
+45 % 2 = 1
+count = 3
+45 % 3 = 0
+number becomes 15
+15 > 1
+count = 3 still
+15 % 3 = 0
+number becomes 5
+ */
