@@ -66,7 +66,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-	printSquareStar(5);
+	    printSquareStar(5);
+	    printSquareStar(8);
 
     }
 
@@ -78,18 +79,40 @@ public class Main {
 
         } else {
 
-            for(int row = 0; row < number; row++) {
+            for(int row = 1; row <= number; row++) {
 
-                for(int column = 0; column < number; column++) {
+                for(int column = 1; column <= number; column++) {
 
+                    if(row == 1 || row == number) {
 
+                        System.out.print("*");
+
+                    } else if(column == 1 || column == number) {
+
+                        System.out.print("*");
+
+                    } else if(row == column) {
+
+                        System.out.print("*");
+
+                    } else if(column == (number - row + 1)) {
+
+                            System.out.print("*");
+
+                    } else {
+
+                        System.out.print(" ");
+
+                    }
 
                 }
+
+                System.out.println();
 
             }
 
         }
 
     }
-    
+
 }
