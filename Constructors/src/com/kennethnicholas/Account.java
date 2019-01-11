@@ -16,7 +16,9 @@ public class Account {
         // Optional, not something you have to do, but there can be situations when you want to make sure that whenever a class is created all the fields get set.
         // using this to call another constructor. Always make sure that the this() statement must be the first line that's called in the constructor body.
         // this constructor calls the one below because we used the this() keyword to set default values.
-        
+        // It is generally considered best practice to use this to set initialization values. You could use setters in a constructor, but that's considered bad
+        // practice as a general rule.
+
         System.out.println("Empty constructor called");
 
     }
@@ -27,6 +29,15 @@ public class Account {
 
         this.number = number;
         this.balance = balance;
+        this.customerName = customerName;
+        this.customerEmailAddress = customerEmailAddress;
+        this.customerPhoneNumber = customerPhoneNumber;
+
+    }
+
+    public Account(String customerName, String customerEmailAddress, String customerPhoneNumber) {
+
+        this("99999", 100.55, customerName, customerEmailAddress, customerPhoneNumber);
         this.customerName = customerName;
         this.customerEmailAddress = customerEmailAddress;
         this.customerPhoneNumber = customerPhoneNumber;
