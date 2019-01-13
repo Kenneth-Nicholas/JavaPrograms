@@ -204,6 +204,26 @@
 * An example would be the same code as above, only in this case, it would be "private String name" without the static
 * keyword. When this simple change is made, the output becomes rex followed by fluffy.
 *
+*
+*
+* All classes in Java inherit from automatically - Even if you don't type extends, any class automatically inherits from
+* a Java supplied class called the object class. You can see this by clicking on the generate code feature and select
+* override methods, select methods to override/implement. You can see Object(), hashCode():int,
+* equals(obj:Object):boolean, clone():Object, toString():String, finalize():void, which are all from java.lang.object
+*
+* Class Object is the root of the class hierarchy. Every class has Object as a superclass. All objects, including arrays
+* implement the methods of this class.
+*
+*
+*
+* Inheritance Challenge
+* Start with a base class of a Vehicle, then create a Car class that inherits from this base class.
+* Finally, create another class, a specific type of Car that inherits from the Car class.
+* You should be able to hand steering, changing gears, and moving (speed in other words).
+* You will want to decide where to put the appropriate state and behaviours (fields and methods).
+* As mentioned above, changing gears, increasing/decreasing speed should be included.
+* For your specific type of vehicle you will want to add something specific for that type of car.
+*
 * */
 
 package com.kennethnicholas;
@@ -211,6 +231,13 @@ package com.kennethnicholas;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        Outlander outlander = new Outlander(36);
+        outlander.steer(45);
+        outlander.accelerate(30);
+        outlander.accelerate(20);
+        outlander.accelerate(-42);
+
     }
+
 }
